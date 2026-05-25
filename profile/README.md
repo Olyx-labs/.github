@@ -27,6 +27,6 @@ We’re building developer-first infrastructure for reliable, governable, and co
 
 For early access and updates, see our docs and request-access flow.
 
-Status
+### Status
 
 Olyx is currently in closed beta.
