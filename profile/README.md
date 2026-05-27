@@ -4,7 +4,7 @@ Control plane for AI and MCP-native execution.
 
 Olyx helps teams route, trace, and govern model + tool calls across providers without hardcoding provider-specific logic into application code.
 
-**Public SDK release: May 25, 2026.**
+
 
 ## Why Teams Use Olyx
 
