@@ -8,59 +8,125 @@ You keep your provider credentials. Olyx handles routing, observability, and gov
 
 ## How it works
 
-1. Install the CLI
+<details>
+<summary><strong>Using the CLI</strong></summary>
 
-<details> <summary>macOS (Apple Silicon)</summary>
+**1. Install**
 
+<details>
+<summary>macOS (Apple Silicon)</summary>
+
+```sh
 curl -fsSLO https://github.com/Olyx-labs/Olyx-CLI/releases/latest/download/olyx-v0.1.0-aarch64-apple-darwin.tar.gz
 tar -xzf olyx-v0.1.0-aarch64-apple-darwin.tar.gz
 sudo install -m 0755 olyx /usr/local/bin/olyx
 olyx --version
-</details> <details> <summary>macOS (Intel)</summary>
+```
+</details>
 
+<details>
+<summary>macOS (Intel)</summary>
+
+```sh
 curl -fsSLO https://github.com/Olyx-labs/Olyx-CLI/releases/latest/download/olyx-v0.1.0-x86_64-apple-darwin.tar.gz
 tar -xzf olyx-v0.1.0-x86_64-apple-darwin.tar.gz
 sudo install -m 0755 olyx /usr/local/bin/olyx
 olyx --version
-</details> <details> <summary>Linux x86_64</summary>
+```
+</details>
 
+<details>
+<summary>Linux x86_64</summary>
+
+```sh
 curl -fsSLO https://github.com/Olyx-labs/Olyx-CLI/releases/latest/download/olyx-v0.1.0-x86_64-unknown-linux-musl.tar.gz
 tar -xzf olyx-v0.1.0-x86_64-unknown-linux-musl.tar.gz
 sudo install -m 0755 olyx /usr/local/bin/olyx
 olyx --version
-</details> <details> <summary>Linux arm64</summary>
+```
+</details>
 
+<details>
+<summary>Linux arm64</summary>
+
+```sh
 curl -fsSLO https://github.com/Olyx-labs/Olyx-CLI/releases/latest/download/olyx-v0.1.0-aarch64-unknown-linux-musl.tar.gz
 tar -xzf olyx-v0.1.0-aarch64-unknown-linux-musl.tar.gz
 sudo install -m 0755 olyx /usr/local/bin/olyx
 olyx --version
-</details> <details> <summary>Windows (PowerShell)</summary>
+```
+</details>
 
+<details>
+<summary>Windows (PowerShell)</summary>
+
+```powershell
 $version = "v0.1.0"
 $asset = "olyx-$version-x86_64-pc-windows-msvc.zip"
 Invoke-WebRequest -Uri "https://github.com/Olyx-labs/Olyx-CLI/releases/download/$version/$asset" -OutFile $asset
 Expand-Archive $asset -DestinationPath .
 Move-Item "olyx-$version-x86_64-pc-windows-msvc\olyx.exe" "$env:LOCALAPPDATA\Microsoft\WindowsApps\olyx.exe"
 olyx --version
+```
 </details>
-2. Configure your project key
 
+**2. Configure and run**
 
+```sh
 export OLYX_API_KEY=ak_...
-olyx config
-3. Open a trace before your model call
 
+# Check your project policy
+olyx config
+
+# Open a trace before your model call
 olyx trace --metadata '{"service":"checkout","operation":"cart.create","environment":"production"}'
 
-4. Make your model call using your own provider credentials
+# Make your model call using your own provider credentials
+# Provider secrets never leave your environment
 
-Provider secrets never leave your environment — pass them directly to your provider as you normally would.
-
-5. Complete the trace and queue a replay
-
-
+# Complete the trace and queue a replay
 olyx complete trace_01J6AF...
 olyx replay trace_01J6AF...
+```
+
+</details>
+
+<details>
+<summary><strong>Using the HTTP API</strong></summary>
+
+No install required. Every CLI command maps to an HTTP endpoint.
+
+```sh
+export OLYX_API_KEY=ak_...
+
+# Check your project policy
+curl https://app.olyxai.io/api/v1/config \
+  -H "Authorization: Bearer $OLYX_API_KEY"
+
+# Open a trace before your model call
+curl https://app.olyxai.io/api/v1/traces \
+  -H "Authorization: Bearer $OLYX_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"metadata":{"service":"checkout","operation":"cart.create","environment":"production"}}'
+# → {"id":"trace_01J6AF...","status":"pending",...}
+
+# Make your model call using your own provider credentials
+# Provider secrets never leave your environment
+
+# Complete the trace
+curl -X PATCH https://app.olyxai.io/api/v1/traces/trace_01J6AF.../complete \
+  -H "Authorization: Bearer $OLYX_API_KEY"
+
+# Queue a replay
+curl https://app.olyxai.io/api/v1/replay \
+  -H "Authorization: Bearer $OLYX_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"trace_id":"trace_01J6AF..."}'
+# → {"job_id":"job_01J6AG...","status":"queued"}
+```
+
+</details>
+
 Every completed trace records which model ran, what it cost, how long it took, and whether any policy signals fired. Replay lets you run the same input against a different model to compare before changing production routing.
 
 ---
@@ -70,6 +136,9 @@ Every completed trace records which model ran, what it cost, how long it took, a
 | Repo | Description |
 | :--- | :--- |
 | [`Olyx-CLI`](https://github.com/Olyx-labs/Olyx-CLI) | CLI for creating traces, queuing replays, and inspecting project config |
+| [`olyx-typescript`](https://github.com/Olyx-labs/olyx-typescript) | TypeScript/Node SDK |
+| [`olyx-python`](https://github.com/Olyx-labs/olyx-python) | Python SDK |
+| [`olyx-ruby`](https://github.com/Olyx-labs/olyx-ruby) | Ruby SDK |
 
 ---
 
