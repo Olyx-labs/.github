@@ -50,8 +50,8 @@ export OLYX_API_KEY=ak_...
 olyx config
 3. Open a trace before your model call
 
-
 olyx trace --metadata '{"service":"checkout","operation":"cart.create","environment":"production"}'
+
 4. Make your model call using your own provider credentials
 
 Provider secrets never leave your environment — pass them directly to your provider as you normally would.
@@ -70,9 +70,6 @@ Every completed trace records which model ran, what it cost, how long it took, a
 | Repo | Description |
 | :--- | :--- |
 | [`Olyx-CLI`](https://github.com/Olyx-labs/Olyx-CLI) | CLI for creating traces, queuing replays, and inspecting project config |
-| [`olyx-typescript`](https://github.com/Olyx-labs/olyx-typescript) | TypeScript/Node SDK |
-| [`olyx-python`](https://github.com/Olyx-labs/olyx-python) | Python SDK |
-| [`olyx-ruby`](https://github.com/Olyx-labs/olyx-ruby) | Ruby SDK |
 
 ---
 
@@ -94,15 +91,15 @@ Every completed trace records which model ran, what it cost, how long it took, a
 
 ## Documentation
 
-Full docs at [app.olyxai.io/docs](https://app.olyxai.io/docs).
+Full docs at [app.olyxai.io/docs](https://olyxai.io/docs).
 
-- [Quickstart](https://app.olyxai.io/docs/v1/guides/quick-start) — first trace in under 5 minutes
-- [Authentication](https://app.olyxai.io/docs/v1/auth) — API keys, project scoping, rotation
-- [Routing](https://app.olyxai.io/docs/v1/guides/routing) — routing tiers, fallbacks, policy simulation
-- [Replays](https://app.olyxai.io/docs/v1/guides/replays) — compare models against historical traffic
-- [MCP Integration](https://app.olyxai.io/docs/v1/guides/mcp) — IDE setup and proxy usage
-- [API Reference](https://app.olyxai.io/docs/v1/api/endpoints) — full endpoint reference
+- [Quickstart](https://olyxai.io/docs/v1/guides/quick-start) — first trace in under 5 minutes
+- [Authentication](https://olyxai.io/docs/v1/auth) — API keys, project scoping, rotation
+- [Routing](https://olyxai.io/docs/v1/guides/routing) — routing tiers, fallbacks, policy simulation
+- [Replays](https://olyxai.io/docs/v1/guides/replays) — compare models against historical traffic
+- [MCP Integration](https://olyxai.io/docs/v1/guides/mcp) — IDE setup and proxy usage
+- [API Reference](https://olyxai.io/docs/v1/api/endpoints) — full endpoint reference
 
 ---
 
-**Status:** Closed beta. [Request access →](https://app.olyxai.io)
+**Status:** Closed beta. [Request access →](https://olyxai.io)
