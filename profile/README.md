@@ -136,9 +136,6 @@ Every completed trace records which model ran, what it cost, how long it took, a
 | Repo | Description |
 | :--- | :--- |
 | [`Olyx-CLI`](https://github.com/Olyx-labs/Olyx-CLI) | CLI for creating traces, queuing replays, and inspecting project config |
-| [`olyx-typescript`](https://github.com/Olyx-labs/olyx-typescript) | TypeScript/Node SDK |
-| [`olyx-python`](https://github.com/Olyx-labs/olyx-python) | Python SDK |
-| [`olyx-ruby`](https://github.com/Olyx-labs/olyx-ruby) | Ruby SDK |
 
 ---
 
