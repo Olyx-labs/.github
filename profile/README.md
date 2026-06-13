@@ -159,7 +159,7 @@ Scheduled Release: June 15, 2026
 
 ## Documentation
 
-Full docs at [app.olyxai.io/docs](https://olyxai.io/docs).
+Full docs at [olyxai.io/docs](https://olyxai.io/docs).
 
 - [Quickstart](https://olyxai.io/docs/v1/guides/quick-start) — first trace in under 5 minutes
 - [Authentication](https://olyxai.io/docs/v1/auth) — API keys, project scoping, rotation
