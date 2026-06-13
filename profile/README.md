@@ -135,6 +135,8 @@ Every completed trace records which model ran, what it cost, how long it took, a
 
 | Repo | Description |
 | :--- | :--- |
+Scheduled Release: June 15, 2026
+
 | [`Olyx-CLI`](https://github.com/Olyx-labs/Olyx-CLI) | CLI for creating traces, queuing replays, and inspecting project config |
 
 ---
