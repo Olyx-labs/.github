@@ -8,26 +8,59 @@ You keep your provider credentials. Olyx handles routing, observability, and gov
 
 ## How it works
 
-```sh
-# 1. Install the CLI
-curl -fsSLO https://github.com/Olyx-labs/Olyx-CLI/releases/latest/download/olyx-linux-x86_64.tar.gz
-tar -xzf olyx-linux-x86_64.tar.gz && sudo install olyx /usr/local/bin/olyx
+1. Install the CLI
 
-# 2. Configure your project key
+<details> <summary>macOS (Apple Silicon)</summary>
+
+curl -fsSLO https://github.com/Olyx-labs/Olyx-CLI/releases/latest/download/olyx-v0.1.0-aarch64-apple-darwin.tar.gz
+tar -xzf olyx-v0.1.0-aarch64-apple-darwin.tar.gz
+sudo install -m 0755 olyx /usr/local/bin/olyx
+olyx --version
+</details> <details> <summary>macOS (Intel)</summary>
+
+curl -fsSLO https://github.com/Olyx-labs/Olyx-CLI/releases/latest/download/olyx-v0.1.0-x86_64-apple-darwin.tar.gz
+tar -xzf olyx-v0.1.0-x86_64-apple-darwin.tar.gz
+sudo install -m 0755 olyx /usr/local/bin/olyx
+olyx --version
+</details> <details> <summary>Linux x86_64</summary>
+
+curl -fsSLO https://github.com/Olyx-labs/Olyx-CLI/releases/latest/download/olyx-v0.1.0-x86_64-unknown-linux-musl.tar.gz
+tar -xzf olyx-v0.1.0-x86_64-unknown-linux-musl.tar.gz
+sudo install -m 0755 olyx /usr/local/bin/olyx
+olyx --version
+</details> <details> <summary>Linux arm64</summary>
+
+curl -fsSLO https://github.com/Olyx-labs/Olyx-CLI/releases/latest/download/olyx-v0.1.0-aarch64-unknown-linux-musl.tar.gz
+tar -xzf olyx-v0.1.0-aarch64-unknown-linux-musl.tar.gz
+sudo install -m 0755 olyx /usr/local/bin/olyx
+olyx --version
+</details> <details> <summary>Windows (PowerShell)</summary>
+
+$version = "v0.1.0"
+$asset = "olyx-$version-x86_64-pc-windows-msvc.zip"
+Invoke-WebRequest -Uri "https://github.com/Olyx-labs/Olyx-CLI/releases/download/$version/$asset" -OutFile $asset
+Expand-Archive $asset -DestinationPath .
+Move-Item "olyx-$version-x86_64-pc-windows-msvc\olyx.exe" "$env:LOCALAPPDATA\Microsoft\WindowsApps\olyx.exe"
+olyx --version
+</details>
+2. Configure your project key
+
+
 export OLYX_API_KEY=ak_...
 olyx config
+3. Open a trace before your model call
 
-# 3. Open a trace before your model call
+
 olyx trace --metadata '{"service":"checkout","operation":"cart.create","environment":"production"}'
+4. Make your model call using your own provider credentials
 
-# 4. Make your model call using your own provider credentials
-# Provider secrets never leave your environment
+Provider secrets never leave your environment — pass them directly to your provider as you normally would.
 
-# 5. Complete the trace and queue a replay
+5. Complete the trace and queue a replay
+
+
 olyx complete trace_01J6AF...
 olyx replay trace_01J6AF...
-```
-
 Every completed trace records which model ran, what it cost, how long it took, and whether any policy signals fired. Replay lets you run the same input against a different model to compare before changing production routing.
 
 ---
