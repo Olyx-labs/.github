@@ -1,10 +1,25 @@
 # Security Policy
 
-We take the security of our private deployment products seriously. Please **do not** open public GitHub issues for security vulnerabilities. 
+Do not open public GitHub issues for security vulnerabilities. Public disclosure before a fix is in place puts all users at risk.
 
-## Reporting a Vulnerability
-Please report security bugs privately through one of the following channels:
-* Email us directly at **security@olyxlabs.com**
-* Submit a private report via the [Organization Security Advisory Portal](https://github.com)
+## Reporting a vulnerability
 
-Please include a detailed description, reproduction steps, and any proof-of-concept code. We acknowledge valid submissions within 48 hours.
+Email **security@olyxai.io** with:
+
+- A description of the vulnerability and the affected component (API, CLI, dashboard, edge node)
+- Steps to reproduce or a proof-of-concept
+- The potential impact as you understand it
+
+We acknowledge valid reports within 48 hours and aim to ship a fix or mitigation within 14 days for critical issues. We'll keep you updated throughout.
+
+You can also submit a report privately via the [GitHub Security Advisory portal](https://github.com/Olyx-labs/.github/security/advisories/new).
+
+## Scope
+
+In scope: the Olyx HTTP API, CLI, dashboard, `olyx-edge`, and any published SDK.  
+Out of scope: social engineering, physical attacks, or issues in third-party dependencies where the upstream project is the appropriate recipient.
+
+## Contact
+
+For non-security questions: hello@olyxai.io  
+For account and billing issues: hello@olyxai.io
