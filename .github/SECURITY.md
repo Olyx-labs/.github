@@ -22,4 +22,4 @@ Out of scope: social engineering, physical attacks, or issues in third-party dep
 ## Contact
 
 For non-security questions: hello@olyxai.io  
-For account and billing issues: hello@olyxai.io
+For account issues: hello@olyxai.io
