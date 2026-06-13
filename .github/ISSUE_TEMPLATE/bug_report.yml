@@ -1,0 +1,76 @@
+name: Bug report
+description: Something isn't working as documented.
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before filing: check the [error codes reference](https://app.olyxai.io/docs/v1/api/errors) and your project's trace detail page — many issues show up there first.
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Where is the issue?
+      options:
+        - CLI
+        - HTTP API
+        - Dashboard
+        - Routing / policy
+        - Replays
+        - Governance / ledger
+        - MCP integration
+        - SDK (TypeScript)
+        - SDK (Python)
+        - SDK (Ruby)
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, and what actually happened?
+      placeholder: |
+        I ran `olyx trace --metadata '...'` and got a 422 instead of a trace ID.
+        Expected: trace created with status "pending".
+        Got: {"error":"Unprocessable Entity","code":"invalid_metadata",...}
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Set OLYX_API_KEY and OLYX_BASE_URL
+        2. Run `olyx trace --metadata '{"key": ...}'`
+        3. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: trace-id
+    attributes:
+      label: Trace ID or request ID
+      description: If the request reached the API, paste the trace ID or `request_id` from the error response. Helps us look up the server-side record.
+      placeholder: trace_01J6AF... or req_01J6AJ...
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: CLI version, SDK version, OS, deployment type.
+      placeholder: |
+        CLI: olyx 0.1.0
+        OS: macOS 14 / Linux (Alpine)
+        Deployment: Olyx Cloud / olyx-edge
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant output or logs
+      description: Paste error output, response bodies, or `olyx inspect` output. Redact API keys.
+      render: shell

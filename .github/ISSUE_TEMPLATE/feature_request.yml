@@ -1,0 +1,51 @@
+name: Feature request
+description: Suggest a capability or improvement.
+labels: ["enhancement", "triage"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which area does this relate to?
+      options:
+        - CLI
+        - HTTP API
+        - Routing / policy
+        - Traces
+        - Replays
+        - Cost intelligence
+        - Governance / ledger
+        - MCP integration
+        - SDK (TypeScript)
+        - SDK (Python)
+        - SDK (Ruby)
+        - Dashboard
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem are you trying to solve?
+      description: Describe the situation that prompted this request. Concrete examples help.
+      placeholder: |
+        When I have 50+ traces from a batch job, I want to replay them all against a new model
+        without scripting individual `olyx replay` calls. There's no bulk replay option today.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like to see?
+      description: Describe the behaviour, API shape, or UX you have in mind. Rough is fine.
+      placeholder: |
+        A `olyx replay --batch --filter 'metadata.job_id=batch_01J6...'` command,
+        or a POST /api/v1/replay/batch endpoint that accepts a filter and queues jobs for each match.
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Current workaround
+      description: How are you handling this today, if at all?

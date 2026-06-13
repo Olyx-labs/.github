@@ -1,0 +1,40 @@
+name: Documentation issue
+description: Something in the docs is wrong, missing, or unclear.
+labels: ["documentation", "triage"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page or section
+      placeholder: https://app.olyxai.io/docs/v1/guides/routing#tiers
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type of issue
+      options:
+        - Incorrect — documented behaviour doesn't match what the API does
+        - Missing — something isn't documented at all
+        - Unclear — the explanation is confusing or ambiguous
+        - Outdated — docs don't reflect a recent change
+        - Broken link or example
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What's wrong or missing?
+      placeholder: |
+        The routing guide says `force_model` and `compare_models` can be used together,
+        but the API returns a 422 when both are set. One of them must be exclusive.
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested fix or addition
+      description: Optional — paste corrected text or describe what you'd like to see.

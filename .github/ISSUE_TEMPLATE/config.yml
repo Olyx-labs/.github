@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Early access and billing
+    url: mailto:hello@olyxai.io
+    about: Request access, manage your workspace, or contact us about your account.
+  - name: Documentation
+    url: https://app.olyxai.io/docs
+    about: Full API reference, guides, and examples.
+  - name: Security vulnerability
+    url: mailto:security@olyxai.io
+    about: Please do not file security issues publicly. Email us directly.
