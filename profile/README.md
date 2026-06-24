@@ -133,7 +133,7 @@ Every completed trace records which model ran, what it cost, how long it took, a
 
 ## What's in this org
 
-Scheduled Release: June 21, 2026
+Scheduled Release: June 25, 2026
 | Repo | Description |
 | :--- | :--- |
 
