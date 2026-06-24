@@ -48,7 +48,6 @@ changing production routing.
 
 ## Public repos
 
-<<<<<<< HEAD
 =======
 Scheduled Release: June 25, 2026
 >>>>>>> a1d7f0c29b1033f15aa3b24154c057894687b7f9
