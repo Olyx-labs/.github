@@ -49,7 +49,7 @@ changing production routing.
 ## Public repos
 
 =======
-Scheduled Release: June 25, 2026
+Scheduled Release: June 27, 2026
 | Repo | Description |
 | :--- | :--- |
 | [`Olyx-CLI`](https://github.com/Olyx-labs/Olyx-CLI) | Public CLI for project config, traces, replay, and runtime inspection |
