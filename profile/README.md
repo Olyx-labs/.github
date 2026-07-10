@@ -7,7 +7,6 @@
 **The control layer for production AI**
 
 [![Status](https://img.shields.io/badge/Status-Closed%20Beta-orange)](https://olyxai.io)
-[![License](https://img.shields.io/badge/License-MIT-blue)](#license)
 [![Docs](https://img.shields.io/badge/Docs-olyxai.io-blueviolet)](https://olyxai.io/docs)
 
 [Website](https://olyxai.io) • [Documentation](https://olyxai.io/docs) • [Request Access](https://olyxai.io)
@@ -67,21 +66,6 @@ base_url: https://app.olyxai.io/v1
 ```
 
 Every completed trace records which model ran, what it cost, how long it took, and whether any policy signals fired. Replay lets you compare outcomes before changing production routing.
-
----
-
-## 📦 Tech Stack
-
-<div align="center">
-
-| Category | Technologies |
-|---|---|
-| **Frontend** | TypeScript (25.8%), Astro (14.7%), JavaScript (3.1%) |
-| **Backend** | Ruby (43.4%), TypeScript (25.8%) |
-| **Content** | MDX (9.5%) |
-| **Styling** | CSS (2.5%) |
-
-</div>
 
 ---
 
