@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="594" height="603" alt="Olyx-favicon copy" src="https://github.com/user-attachments/assets/6704a659-dd7d-4aa5-8b9b-2d55a127e7f2" />
+<img width="200" height="200" alt="Olyx-favicon copy" src="https://github.com/user-attachments/assets/6704a659-dd7d-4aa5-8b9b-2d55a127e7f2" />
 
 # Olyx
 
