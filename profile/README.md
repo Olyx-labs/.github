@@ -6,7 +6,7 @@
 
 **A model access layer for AI apps and chat UIs**
 
-[Website](https://olyxai.io) · [Request Access](https://olyxai.io/request-access) · [Integrations](https://olyxai.io/integrations) | https://olyxhq.slack.com/join/shared_invite/zt-42n7g24g0-0anZo~uDC_STGpoBu47SyA#/shared-invite/email
+[Website](https://olyxai.io) · [Request Access](https://olyxai.io/request-access) · [Integrations](https://olyxai.io/integrations) | https://olyxhq.slack.com/
 
 </div>
 
