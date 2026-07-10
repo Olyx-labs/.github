@@ -1,3 +1,4 @@
+<img width="594" height="603" alt="Olyx-favicon copy" src="https://github.com/user-attachments/assets/6704a659-dd7d-4aa5-8b9b-2d55a127e7f2" />
 # Olyx
 
 Olyx is the control layer for production AI.
