@@ -48,8 +48,6 @@ Olyx is currently in closed beta.
 - Request access: [olyxai.io/request-access](https://olyxai.io/request-access)
 - Connect LibreChat: [LibreChat integration](https://olyxai.io/integrations/librechat)
 - Connect Open WebUI: [Open WebUI integration](https://olyxai.io/integrations/open-webui)
-- Public CLI: [`Olyx-CLI`](https://github.com/Olyx-labs/Olyx-CLI)
-
 ---
 
 ## About Olyx Labs
