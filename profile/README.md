@@ -6,7 +6,7 @@
 
 **A model access layer for AI apps and chat UIs**
 
-[Website](https://olyxai.io) · [Request Access](https://olyxai.io/request-access) · [Integrations](https://olyxai.io/integrations) |
+[Website](https://olyxai.io) · [Integrations](https://olyxai.io/integrations) |
 
 </div>
 
@@ -23,8 +23,6 @@ Use Olyx to start with chatbots, then grow into a shared model access layer for 
 It supports two integration paths: a proxy pattern for OpenAI-compatible clients, and a CLI/runtime pattern for apps that call providers directly.
 
 If Olyx cannot observe or reproduce a run, it does not pretend to manage it.
-
-[→ Request access](https://olyxai.io/request-access)
 
 ---
 
