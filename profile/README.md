@@ -2,56 +2,81 @@
 
 <img width="160" height="160" alt="Olyx logo" src="https://github.com/user-attachments/assets/6704a659-dd7d-4aa5-8b9b-2d55a127e7f2" />
 
-# Olyx
+# Olyx Labs
 
-**A model access layer for AI apps and chat UIs**
+**Tools for connecting, inspecting, and protecting AI applications.**
 
-[Website](https://olyxai.io) · [Integrations](https://olyxai.io/integrations) |
+[Website](https://olyxai.io) · [Documentation](https://docs.olyxai.io) · [Articles](https://olyxai.io/articles)
 
 </div>
 
----
+We build Olyx CLI and Olyx Guardrails. Use the CLI to send model requests,
+inspect failures, and compare responses. Use Guardrails to check the content
+entering or leaving a Ruby application. Each works on its own.
 
-## How Olyx Works
+## Olyx CLI
 
-Olyx sits between your AI app and model providers, giving teams one place to manage model access, routing, traces, cost, and replay.
+**Your model workflow, in your terminal.**
 
-Connect an existing chat UI such as LibreChat or Open WebUI through an OpenAI-compatible endpoint. Your app keeps the same client shape, while Olyx records which model ran, how long it took, what it cost, and which routing or policy decision was applied.
+Olyx CLI connects to a hosted endpoint, a model server on your own machine,
+or a provider plugin. Give models explicit aliases, configure ordered fallbacks,
+and stream responses. Requests and responses are recorded in a local SQLite
+database so you can inspect a trace or replay it against another model.
 
-Use Olyx to start with chatbots, then grow into a shared model access layer for production AI systems.
+- **Route:** choose a configured model alias and try fallbacks in order.
+- **Inspect:** see saved inputs, outputs, provider attempts, errors, and latency.
+- **Replay:** send a recorded request again or compare models while keeping the original trace.
+- **Serve:** connect an application through OpenAI-compatible chat, embeddings, and model-list endpoints.
+- **Extend:** write a provider adapter without changing the CLI.
 
-It supports two integration paths: a proxy pattern for OpenAI-compatible clients, and a CLI/runtime pattern for apps that call providers directly.
+The CLI runs on your machine or infrastructure. Model requests go to the
+endpoint you configure. No Olyx account is required. Your application owns
+agent orchestration, tool execution, document ingestion, and retrieval.
 
-If Olyx cannot observe or reproduce a run, it does not pretend to manage it.
+**Release status:** the CLI is prepared for release; npm publication is pending.
+Once published, run it with Node.js 22 or newer:
 
----
+```sh
+npx @olyx-labs/cli --help
+```
 
-## What Olyx Helps With
+A global npm installation provides the short `oy` command. Rust and a database
+server are not required. A local model needs a running inference server;
+hosted services may require credentials and charge for usage.
 
-| Capability | What it does |
-|---|---|
-| **Chat UI integration** | Connect LibreChat, Open WebUI, and OpenAI-compatible tools through one model endpoint. |
-| **Model access** | Expose approved models to teams and apps without scattering provider credentials. |
-| **Routing** | Route requests by model tier, metadata, fallback rules, or cost controls. |
-| **Traces** | Record model choice, latency, cost, metadata, and policy signals for each request. |
-| **Replay** | Compare past traffic against a different model or routing setup before changing production behavior. |
-| **Decision history** | Keep a clear record of model decisions for debugging, reviews, and audits. |
+[Source](https://github.com/Olyx-labs/Olyx-CLI) · [Quickstart](https://docs.olyxai.io/getting-started/quickstart/) · [Provider plugins](https://docs.olyxai.io/guides/plugins/)
 
----
+## Olyx Guardrails
 
-## Get Started
+**Lightweight input and output checks for Ruby and Rails.**
 
-Olyx is currently in closed beta.
+Use configurable policies to detect prompt injection, personal information,
+secrets, and restricted content. Get an allow/block decision or redact recognized
+content at the boundaries your application chooses.
 
-- Request access: [olyxai.io/request-access](https://olyxai.io/request-access)
-- Connect LibreChat: [LibreChat integration](https://olyxai.io/integrations/librechat)
-- Connect Open WebUI: [Open WebUI integration](https://olyxai.io/integrations/open-webui)
----
+Deterministic checks run locally. Guardrails works without the CLI or an Olyx
+account. Rails is optional; an optional model-based check uses the adapter you
+provide.
 
-## About Olyx Labs
+Add the gem to your application's `Gemfile`:
 
-Olyx Labs builds infrastructure for teams running AI systems in production.
+```ruby
+gem "olyx-guardrails", "~> 1.2"
+```
 
-Olyx is our model access layer: a practical control point for chat UIs, internal tools, and production apps that need shared model access, routing, trace history, cost visibility, and safer rollout workflows.
+```sh
+bundle install
+```
 
-[→ olyxai.io](https://olyxai.io)
+Requires Ruby 3.4 or newer.
+
+[Source](https://github.com/Olyx-labs/olyx-guardrails) · [Quickstart](https://docs.olyxai.io/guardrails/quickstart/) · [RubyGems](https://rubygems.org/gems/olyx-guardrails)
+
+## Questions and contributions
+
+Start with the documentation for the project you use. Report bugs and suggest
+improvements in that project's GitHub issues. For development setup and security
+reports, see its contributing guide and security policy.
+
+Both projects use the Apache License 2.0. See each repository for its license
+and notices.
