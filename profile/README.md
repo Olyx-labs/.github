@@ -31,11 +31,10 @@ The CLI runs on your machine or infrastructure. Model requests go to the
 endpoint you configure. No Olyx account is required. Your application owns
 agent orchestration, tool execution, document ingestion, and retrieval.
 
-**Release status:** npm publication coming soon.
-Once published, run it with Node.js 22 or newer:
+Run it with Node.js 22 or newer:
 
 ```sh
-npx @olyx-labs/cli --help
+npx olyx-cli --help
 ```
 
 A global npm installation provides the short `oy` command. Rust and a database
