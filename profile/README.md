@@ -16,8 +16,6 @@ entering or leaving a Ruby application. Each works on its own.
 
 ## Olyx CLI
 
-**Your model workflow, in your terminal.**
-
 Olyx CLI connects to a hosted endpoint, a model server on your own machine,
 or a provider plugin. Give models explicit aliases, configure ordered fallbacks,
 and stream responses. Requests and responses are recorded in a local SQLite
@@ -33,7 +31,7 @@ The CLI runs on your machine or infrastructure. Model requests go to the
 endpoint you configure. No Olyx account is required. Your application owns
 agent orchestration, tool execution, document ingestion, and retrieval.
 
-**Release status:** the CLI is prepared for release; npm publication is pending.
+**Release status:** npm publication coming soon.
 Once published, run it with Node.js 22 or newer:
 
 ```sh
