@@ -4,7 +4,7 @@
 
 # Olyx Labs
 
-**Tools for connecting, inspecting, and protecting AI applications.**
+**Tools for connecting, inspecting AI applications.**
 
 [Website](https://olyxai.io) · [Documentation](https://docs.olyxai.io) · [Articles](https://olyxai.io/articles)
 
